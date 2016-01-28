@@ -2,19 +2,26 @@ language: node_js
 node_js:
 - 0.10
 notifications:
-	email:felipe.z.affonso@gmail.com
-
+  email: false
+services:
+- mongodb
+env:
+  global:
+  - NODE_ENV: test
+addons:
+  sauce_connect: true
 before_install:
-- npm install -g bower@.13
+- npm install -g bower@1.3
 - npm install -g grunt-cli@0.1
 - npm install -g karma-cli@0.0
 - npm install -g protractor@1.5
 - webdriver-manager update
 - bower install
-
 before_script:
-- grunt
-- cd dist
-
+- node test/data.js
+- grunt minifica
+- node server &
+- sleep 10
 script:
 - karma start config/karma.config.js --single-run --browsers PhantomJS
+- protractor config/protractor.js
