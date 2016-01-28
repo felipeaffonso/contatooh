@@ -2,7 +2,7 @@ language: node_js
 node_js:
 - 0.10
 notifications:
-  email: false
+  email: felipe.z.affonso@gmail.com
 #services:
 #- mongodb
 #env:
@@ -19,9 +19,7 @@ before_install:
 - bower install
 before_script:
 #- node test/data.js
-- grunt minifica
-- node server &
-- sleep 10
+- grunt
+- cd dist
 script:
 - karma start config/karma.config.js --single-run --browsers PhantomJS
-- protractor config/protractor.js
