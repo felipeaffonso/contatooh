@@ -3,7 +3,8 @@ node_js:
 - 0.10
 notifications:
   email: felipe.z.affonso@gmail.com
-before_install:
+
+ before_instal:
 - npm install -g bower@1.3
 - npm install -g grunt-cli@0.1
 - npm install -g karma-cli@0.0
