@@ -2,7 +2,7 @@ language: node_js
 node_js:
 - 0.10
 notifications:
-felipe.z.affonso@gmail.com
+	email:felipe.z.affonso@gmail.com
 
 before_install:
 - npm install -g bower@.13
