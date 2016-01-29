@@ -13,11 +13,9 @@ describe('Cadasgtro de Contatos', function() {
 
 	it('Deve cadastrar um contato', function() {
 		var aleatorio = Math.floor((Math.random() * 10000000) + 1);
-		var nome = 'teste' + aleatorio;
-		var email = 'teste@email' + aleatorio;
-
-		pagina.digitarNome(nome);
-		pagina.digitarEmail(email);
+		
+		pagina.digitarNome('teste' + aleatorio);
+		pagina.digitarEmail('teste@email' + aleatorio);
 		pagina.selecionarPrimeiraEmergenciaDaLista();
 		pagina.salvar();
 
